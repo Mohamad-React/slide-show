@@ -1,6 +1,7 @@
 import React from "react";
 
 import "./App.css";
+import Main from "./Components/Main";
 
 const App = () => {
 
@@ -8,7 +9,7 @@ const App = () => {
 
   return (
     <div >
-      
+      <Main/>
     </div>
   );
 };

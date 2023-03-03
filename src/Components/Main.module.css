@@ -1,0 +1,85 @@
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100vh;
+
+}
+
+.container h1 {
+    margin-bottom: 20px;
+    border-bottom: 4px solid rgb(223, 28, 28);
+    border-bottom-width: 5px;
+
+}
+
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border: 1px solid rgb(209, 207, 207);
+    box-shadow: 0px 0px 10px gray;
+    width: 50%;
+   position: relative;
+}
+
+img {
+    width: 130px;
+    border-radius: 50%;
+    height: 130px;
+    margin: 10px;
+}
+
+.Beschreibung {
+    text-align: center;
+    padding-bottom: 10px;
+
+}
+
+.Beschreibung p {
+    font-weight: 600;
+
+}
+
+.secendp {
+    color: rgb(190, 50, 50);
+}
+
+
+.text p{
+      
+    color: rgb(116, 108, 108);
+    padding: 20px;
+    padding-bottom: 20px;
+}
+.buttons{
+    margin-bottom: 10px;
+    padding-bottom: 30px;
+}
+.leftright {
+    position: absolute;
+    bottom: 26px;
+    right: 25px;
+    
+    
+}
+.random{
+    border: none;
+    color: white;
+    padding: 10px;
+    background-color: rgb(233, 66, 66);
+    cursor: pointer;
+}
+.leftright button {
+    margin: 5px;
+    padding: 10p;
+    border-style: none;
+    font-size: 30px;
+    font-weight: 1000;
+    border: none;
+    background-color: inherit;
+    color: red;
+    cursor: pointer;
+}

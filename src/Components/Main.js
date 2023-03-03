@@ -6,10 +6,34 @@ import { useState } from 'react';
 
 const Main = () => {
 
-
+ 
     const [index, setIndex] = useState(0);
-    const { name, job, image, text } = data[index];
+   
+    
 
+     const {name,image,job,text} = data[index];
+
+    const checknumber = (number) => {
+                if (number > data.length-1) {
+                    return 0;
+                }
+                if (number < 0) {
+                    return data.length-1
+                }
+                return number
+    }
+
+    const lefthandler = () => {
+        setIndex((prevState)=> checknumber(prevState+1));
+       
+            
+        
+      };
+      const righthandler = () => {
+        setIndex((prevState)=> checknumber(prevState-1));
+      };
+      
+     
     return (
         <div className={styles.container}>
             <h1>über unsere Mitarbeiter</h1>
@@ -29,8 +53,8 @@ const Main = () => {
                     <button className={styles.random}>Random</button>
                 </div>
                 <div className={styles.leftright}>
-                    <button><BiChevronLeft /></button>
-                    <button><BiChevronRight /></button>
+                    <button onClick={lefthandler}><BiChevronLeft /></button>
+                    <button onClick={righthandler}><BiChevronRight /></button>
                 </div>
                 
 
