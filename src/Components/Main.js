@@ -6,34 +6,45 @@ import { useState } from 'react';
 
 const Main = () => {
 
- 
-    const [index, setIndex] = useState(0);
-   
-    
 
-     const {name,image,job,text} = data[index];
+    const [index, setIndex] = useState(0);
+
+
+
+    const { name, image, job, text } = data[index];
 
     const checknumber = (number) => {
-                if (number > data.length-1) {
-                    return 0;
-                }
-                if (number < 0) {
-                    return data.length-1
-                }
-                return number
+        if (number > data.length - 1) {
+            return 0;
+        }
+        if (number < 0) {
+            return data.length - 1
+        }
+        return number
     }
 
     const lefthandler = () => {
-        setIndex((prevState)=> checknumber(prevState+1));
-       
-            
-        
-      };
-      const righthandler = () => {
-        setIndex((prevState)=> checknumber(prevState-1));
-      };
-      
-     
+        setIndex((prevState) => checknumber(prevState + 1));
+
+
+
+    };
+    const righthandler = () => {
+        setIndex((prevState) => checknumber(prevState - 1));
+    };
+
+
+    const randomHandler = () => {
+        const random = Math.floor(Math.random() * data.length);
+        console.log(random);
+        if(random === index) {
+            setIndex(checknumber(random+1))
+        }else {
+            setIndex(random)
+        }
+
+    }
+
     return (
         <div className={styles.container}>
             <h1>über unsere Mitarbeiter</h1>
@@ -47,16 +58,16 @@ const Main = () => {
                     <p className={styles.secendp}>{job}</p>
                 </div>
                 <div className={styles.text}>
-                <p>{text}</p>
+                    <p>{text}</p>
                 </div>
                 <div className={styles.buttons}>
-                    <button className={styles.random}>Random</button>
+                    <button className={styles.random} onClick={randomHandler}>Random</button>
                 </div>
                 <div className={styles.leftright}>
                     <button onClick={lefthandler}><BiChevronLeft /></button>
                     <button onClick={righthandler}><BiChevronRight /></button>
                 </div>
-                
+
 
 
 
